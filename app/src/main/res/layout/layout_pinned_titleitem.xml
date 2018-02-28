@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linear_t"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <LinearLayout
+        android:id="@+id/ll_goods_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_50"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/space_2"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/space_10"
+            android:paddingRight="@dimen/space_10">
+
+            <TextView
+                android:id="@+id/txt_pTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="蔬菜蔬菜"
+                android:textSize="@dimen/txt_16"
+                android:textColor="@android:color/black"
+                android:layout_centerInParent="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="精选爆款"
+                android:textColor="@android:color/black"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:textSize="@dimen/txt_10"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_store_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_50"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/space_2"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+        <CheckBox
+            android:id="@+id/ckt_store"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_width="@dimen/space_50"
+            android:layout_height="match_parent"
+            android:padding="@dimen/space_10"/>
+
+
+            <TextView
+                android:id="@+id/tv_store_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/txt_16"
+                android:textColor="@android:color/black"
+                android:layout_centerInParent="true"
+                android:text="乐拉商城"/>
+
+    </LinearLayout>
+</LinearLayout>

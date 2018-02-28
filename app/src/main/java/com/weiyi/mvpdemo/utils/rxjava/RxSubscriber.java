@@ -1,4 +1,4 @@
-package com.weiyi.mvpdemo.utils;
+package com.weiyi.mvpdemo.utils.rxjava;
 
 import android.util.Log;
 

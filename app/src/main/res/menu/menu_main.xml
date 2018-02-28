@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:content="com.weiyi.mvpdemo.v.fragment.TestFragment">
+
+    <item
+        android:id="@+id/menu_search"
+        android:orderInCategory="80"
+        android:title="换肤"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/menu_setting"
+        android:orderInCategory="80"
+        android:title="设置"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/menu_share"
+        android:icon="@mipmap/ic_launcher"
+        android:orderInCategory="80"
+        android:title="分享"/>
+</menu>

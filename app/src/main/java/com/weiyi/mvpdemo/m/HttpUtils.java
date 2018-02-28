@@ -1,10 +1,9 @@
 package com.weiyi.mvpdemo.m;
 
-import com.weiyi.mvpdemo.utils.RxConverterFactoryUtil;
+import com.weiyi.mvpdemo.utils.rxjava.RxConverterFactoryUtil;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by Lee on 2018/1/25 0025.

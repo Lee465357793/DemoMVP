@@ -1,4 +1,4 @@
-package com.weiyi.mvpdemo.utils;
+package com.weiyi.mvpdemo.utils.rxjava;
 
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;

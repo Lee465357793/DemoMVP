@@ -24,6 +24,10 @@ public class BasePresenter<VIEW extends IBaseView> {
     private WeakReference<VIEW> mReference;
     public Context mContext;
 
+    public Context getContext(){
+        return mContext;
+    }
+
     /**
      * 绑定View
      * @param view

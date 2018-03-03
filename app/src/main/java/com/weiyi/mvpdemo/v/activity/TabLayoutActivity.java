@@ -1,9 +1,9 @@
-package com.weiyi.mvpdemo.v;
+package com.weiyi.mvpdemo.v.activity;
 
 import android.support.v7.widget.Toolbar;
 
 import com.weiyi.mvpdemo.R;
-import com.weiyi.mvpdemo.p.TableLayoutPresenter;
+import com.weiyi.mvpdemo.p.activity.TableLayoutPresenter;
 import com.weiyi.mvpdemo.v.base.BaseActivity;
 
 import butterknife.Bind;

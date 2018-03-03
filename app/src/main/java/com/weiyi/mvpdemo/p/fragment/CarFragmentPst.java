@@ -1,4 +1,4 @@
-package com.weiyi.mvpdemo.p;
+package com.weiyi.mvpdemo.p.fragment;
 
 import com.weiyi.mvpdemo.m.bean.CartDataBean;
 import com.weiyi.mvpdemo.m.bean.GoodsDataBean;

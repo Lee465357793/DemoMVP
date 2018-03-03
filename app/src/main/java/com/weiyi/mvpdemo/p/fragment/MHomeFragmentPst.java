@@ -1,4 +1,4 @@
-package com.weiyi.mvpdemo.p;
+package com.weiyi.mvpdemo.p.fragment;
 
 import android.widget.Toast;
 

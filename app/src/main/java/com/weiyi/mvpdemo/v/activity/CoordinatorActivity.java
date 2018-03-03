@@ -1,4 +1,4 @@
-package com.weiyi.mvpdemo.v;
+package com.weiyi.mvpdemo.v.activity;
 
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.view.ActionMode;
@@ -7,7 +7,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.weiyi.mvpdemo.R;
-import com.weiyi.mvpdemo.p.TableLayoutPresenter;
+import com.weiyi.mvpdemo.p.activity.TableLayoutPresenter;
 import com.weiyi.mvpdemo.p.base.BasePresenter;
 import com.weiyi.mvpdemo.v.base.BaseActivity;
 

@@ -22,10 +22,9 @@ import com.weiyi.mvpdemo.R;
 import com.weiyi.mvpdemo.common.adapter.PinnedRecyAdapter;
 import com.weiyi.mvpdemo.m.bean.Cart;
 import com.weiyi.mvpdemo.m.bean.CartDataBean;
-import com.weiyi.mvpdemo.m.bean.ProductInfo;
-import com.weiyi.mvpdemo.p.CarFragmentPst;
+import com.weiyi.mvpdemo.p.fragment.CarFragmentPst;
 import com.weiyi.mvpdemo.p.base.ShopCartRes;
-import com.weiyi.mvpdemo.v.MainActivity;
+import com.weiyi.mvpdemo.v.activity.MainActivity;
 import com.weiyi.mvpdemo.v.base.BaseFragment;
 
 import java.text.DecimalFormat;

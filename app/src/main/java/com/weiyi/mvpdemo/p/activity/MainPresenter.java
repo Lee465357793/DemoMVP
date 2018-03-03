@@ -1,13 +1,12 @@
-package com.weiyi.mvpdemo.p;
+package com.weiyi.mvpdemo.p.activity;
 
 import android.util.Log;
 
 import com.weiyi.mvpdemo.m.bean.AppVersionInfo;
-import com.weiyi.mvpdemo.m.bean.CheckversionBean;
 import com.weiyi.mvpdemo.p.base.BasePresenter;
 import com.weiyi.mvpdemo.utils.rxjava.RxSchedulersHelper;
 import com.weiyi.mvpdemo.utils.rxjava.RxSubscriber;
-import com.weiyi.mvpdemo.v.MainActivity;
+import com.weiyi.mvpdemo.v.activity.MainActivity;
 
 /**
  * Created by Lee on 2018/1/25 0025.

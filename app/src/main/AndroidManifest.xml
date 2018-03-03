@@ -12,18 +12,18 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppBaseTheme">
-        <activity android:name=".v.MainActivity">
+        <activity android:name=".v.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".v.TabLayoutActivity">
+        <activity android:name=".v.activity.TabLayoutActivity">
         </activity>
-        <activity android:name=".v.CoordinatorActivity">
+        <activity android:name=".v.activity.CoordinatorActivity">
         </activity>
-        <activity android:name=".v.ToolbarForActionBarActivity">
+        <activity android:name=".v.activity.ToolbarForActionBarActivity">
         </activity>
     </application>
 

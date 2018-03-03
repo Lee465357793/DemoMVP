@@ -1,4 +1,4 @@
-package com.weiyi.mvpdemo.v;
+package com.weiyi.mvpdemo.v.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

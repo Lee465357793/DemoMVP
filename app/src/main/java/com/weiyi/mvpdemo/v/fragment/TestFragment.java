@@ -4,9 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
-import android.view.ContextMenu;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -17,10 +14,10 @@ import android.widget.Toast;
 
 import com.weiyi.mvpdemo.R;
 import com.weiyi.mvpdemo.p.base.BasePresenter;
-import com.weiyi.mvpdemo.v.CoordinatorActivity;
-import com.weiyi.mvpdemo.v.MainActivity;
-import com.weiyi.mvpdemo.v.TabLayoutActivity;
-import com.weiyi.mvpdemo.v.ToolbarForActionBarActivity;
+import com.weiyi.mvpdemo.v.activity.CoordinatorActivity;
+import com.weiyi.mvpdemo.v.activity.MainActivity;
+import com.weiyi.mvpdemo.v.activity.TabLayoutActivity;
+import com.weiyi.mvpdemo.v.activity.ToolbarForActionBarActivity;
 import com.weiyi.mvpdemo.v.base.BaseFragment;
 
 import java.util.Random;
@@ -87,7 +84,7 @@ public class TestFragment extends BaseFragment<MainActivity, BasePresenter> {
     }
 
 
-    @OnClick({R.id.text_view, R.id.btn_tablayout, R.id.btn_toolBar, R.id.btn_coordinator})
+    @OnClick({R.id.text_view, R.id.anim_view, R.id.btn_tablayout, R.id.btn_toolBar, R.id.btn_coordinator, R.id.btn_show_bottom_dialog})
     public void onViewClicked(View view) {
         switch (view.getId()){
             case R.id.text_view:
@@ -103,29 +100,10 @@ public class TestFragment extends BaseFragment<MainActivity, BasePresenter> {
                 //                    Log.wtf("测试", scheduler.schedule(job) == JobScheduler.RESULT_SUCCESS
                 //                            ? "LookForMediaJob scheduled successfully!" : "LookForMediaJob scheduled failed!");
 
-                final ScaleAnimation scaleAnimation = new ScaleAnimation(0.8f, 1f, 0.8f, 1f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-                ScaleAnimation scaleAnimation2 = new ScaleAnimation(1f, 0.8f, 1f, 0.8f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-                scaleAnimation.setDuration(150);
-                scaleAnimation2.setDuration(150);
-                scaleAnimation2.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation animation) {
-
-                    }
-
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
-                        mAnimView.startAnimation(scaleAnimation);
-                        mAnimView.setVisibility(View.VISIBLE);
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {
-
-                    }
-                });
-                mTextView.startAnimation(scaleAnimation2);
-                mTextView.setVisibility(View.INVISIBLE);
+                starPre();
+                break;
+            case R.id.anim_view:
+                starNor();
                 break;
             case R.id.btn_tablayout:
                 startActivity(new Intent(mActivity, TabLayoutActivity.class));
@@ -136,7 +114,56 @@ public class TestFragment extends BaseFragment<MainActivity, BasePresenter> {
             case R.id.btn_coordinator:
                 startActivity(new Intent(mActivity, CoordinatorActivity.class));
                 break;
+            case R.id.btn_show_bottom_dialog:
+                mActivity.showBottomSheetDialog();
+                break;
         }
 
+    }
+
+    private void starPre() {
+        final ScaleAnimation scaleAnimation = new ScaleAnimation(0f, 1f, 0f, 1f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        scaleAnimation.setDuration(150);
+        scaleAnimation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                mTextView.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        mAnimView.startAnimation(scaleAnimation);
+        mAnimView.setVisibility(View.VISIBLE);
+    }
+    private void starNor() {
+        final ScaleAnimation scaleAnimation = new ScaleAnimation(1f, 0f, 1f, 0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        scaleAnimation.setDuration(150);
+        scaleAnimation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        mTextView.setVisibility(View.VISIBLE);
+        mAnimView.startAnimation(scaleAnimation);
+        mAnimView.setVisibility(View.INVISIBLE);
     }
 }

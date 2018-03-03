@@ -1,4 +1,4 @@
-package com.weiyi.mvpdemo.v;
+package com.weiyi.mvpdemo.v.activity;
 
 import android.content.Intent;
 import android.support.v7.widget.Toolbar;
@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.weiyi.mvpdemo.R;
-import com.weiyi.mvpdemo.p.MainPresenter;
+import com.weiyi.mvpdemo.p.activity.MainPresenter;
 import com.weiyi.mvpdemo.v.base.BaseActivity;
 
 import java.util.Random;

@@ -9,7 +9,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -28,14 +27,13 @@ import com.weiyi.mvpdemo.common.adapter.GalleryAdapter;
 import com.weiyi.mvpdemo.common.adapter.RecycleHeaderAdapter;
 import com.weiyi.mvpdemo.common.banner.GlideImageLoader;
 import com.weiyi.mvpdemo.common.decoration.DividerGridItemDecoration;
-import com.weiyi.mvpdemo.m.bean.GoodsDataBean;
 import com.weiyi.mvpdemo.m.bean.MHomeBannersInfo;
 import com.weiyi.mvpdemo.m.bean.MHomeGoodsInfo;
 import com.weiyi.mvpdemo.m.bean.MHomeNewsInfo;
 import com.weiyi.mvpdemo.m.bean.MHomeSeckillGoodsInfo;
 import com.weiyi.mvpdemo.m.bean.MHomeSeckillTimeInfo;
-import com.weiyi.mvpdemo.p.MHomeFragmentPst;
-import com.weiyi.mvpdemo.v.MainActivity;
+import com.weiyi.mvpdemo.p.fragment.MHomeFragmentPst;
+import com.weiyi.mvpdemo.v.activity.MainActivity;
 import com.weiyi.mvpdemo.v.base.BaseFragment;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
@@ -46,9 +44,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.iwgang.countdownview.CountdownView;
-
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
-import static cn.jpush.android.e.n;
 
 /**
  * Created by Lee on 2018/2/28 0028.
@@ -148,6 +143,7 @@ public class MHomeFragment extends BaseFragment<MainActivity, MHomeFragmentPst> 
     @Override
     public void onLoadmore(RefreshLayout refreshlayout) {
         mSmartRefresh.finishRefresh(1000);
+
     }
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> HTTP response

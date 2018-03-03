@@ -1,19 +1,14 @@
-package com.weiyi.mvpdemo.v;
+package com.weiyi.mvpdemo.v.activity;
 
-import android.content.Intent;
-import android.graphics.Color;
 import android.os.Build;
-import android.support.v7.widget.Toolbar;
+import android.support.design.widget.BottomSheetDialog;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.ScaleAnimation;
-import android.widget.Button;
+import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
@@ -21,13 +16,12 @@ import android.widget.TextView;
 import com.weiyi.mvpdemo.R;
 import com.weiyi.mvpdemo.common.tab.Tabs;
 import com.weiyi.mvpdemo.common.widget.TabFragmentHost;
-import com.weiyi.mvpdemo.p.MainPresenter;
+import com.weiyi.mvpdemo.p.activity.MainPresenter;
 import com.weiyi.mvpdemo.v.base.BaseActivity;
 
-import java.util.Random;
+import java.util.ArrayList;
 
 import butterknife.Bind;
-import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity<MainPresenter> {
 
@@ -38,6 +32,8 @@ public class MainActivity extends BaseActivity<MainPresenter> {
     @Bind(R.id.tabFragmentHost)
     TabFragmentHost mTabFragmentHost;
     private Tabs.Tab[] mMainTabs;
+
+    private String [] mDatas = new String[]{"A", "B", "C", "D", "E", "F"};
 
     @Override
     protected int getLayoutResId() {
@@ -78,6 +74,24 @@ public class MainActivity extends BaseActivity<MainPresenter> {
             tabSpec.setIndicator(textView);
             mTabFragmentHost.addTab(tabSpec, mMainTabs[i].clz, null);
         }
+    }
+
+    public void showBottomSheetDialog(){
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(mActivity);
+        View view = LayoutInflater.from(mActivity).inflate(R.layout.dialog_bottom_sheet_share, null);
+        initView(view);
+        bottomSheetDialog.setContentView(view);
+        bottomSheetDialog.setCancelable(true);
+        bottomSheetDialog.setCanceledOnTouchOutside(true);
+        bottomSheetDialog.show();
+    }
+
+    private void initView(View view) {
+        ListView listView = (ListView) view.findViewById(R.id.list_view);
+        String string = getResources().getString(R.string.list_data);
+        String[] split = string.split("_");
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(mActivity, android.R.layout.simple_list_item_1, android.R.id.text1, split);
+        listView.setAdapter(arrayAdapter);
     }
 
 }

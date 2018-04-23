@@ -6,10 +6,11 @@ import com.weiyi.mvpdemo.R;
 import com.weiyi.mvpdemo.p.activity.TableLayoutPresenter;
 import com.weiyi.mvpdemo.v.base.BaseActivity;
 
-import butterknife.Bind;
+import butterknife.BindView;
+
 
 public class TabLayoutActivity extends BaseActivity<TableLayoutPresenter> {
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     public Toolbar mToolbar;
 
     @Override

@@ -16,18 +16,18 @@ import com.weiyi.mvpdemo.v.base.BaseActivity;
 
 import java.util.Random;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class Main2Activity extends BaseActivity<MainPresenter> {
 
-    @Bind(R.id.btn_tablayout)
+    @BindView(R.id.btn_tablayout)
     Button mBtnTablayout;
-    @Bind(R.id.anim_view)
+    @BindView(R.id.anim_view)
     ImageView mAnimView;
-    @Bind(R.id.text_view)
+    @BindView(R.id.text_view)
     ImageView mTextView;
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     public Toolbar mToolbar;
 
     @Override

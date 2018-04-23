@@ -26,8 +26,11 @@ public abstract class RxSubscriber<T> extends Subscriber<T> {
         if (e instanceof UnknownHostException) {
             msg = "没有网络...";
         } else if (e instanceof SocketTimeoutException) {
-            // 超时
+            //
            msg = "请求超时...";
+        }else if (e instanceof IllegalStateException) {
+            //
+           msg = "数据解析异常...";
         }else{
             msg = "请求失败，请稍后重试...";
         }

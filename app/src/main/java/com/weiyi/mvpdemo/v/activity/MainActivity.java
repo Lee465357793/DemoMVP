@@ -19,17 +19,16 @@ import com.weiyi.mvpdemo.common.widget.TabFragmentHost;
 import com.weiyi.mvpdemo.p.activity.MainPresenter;
 import com.weiyi.mvpdemo.v.base.BaseActivity;
 
-import java.util.ArrayList;
+import butterknife.BindView;
 
-import butterknife.Bind;
 
 public class MainActivity extends BaseActivity<MainPresenter> {
 
-    @Bind(android.R.id.tabcontent)
+    @BindView(android.R.id.tabcontent)
     FrameLayout mTabcontent;
-    @Bind(android.R.id.tabs)
+    @BindView(android.R.id.tabs)
     TabWidget mTabs;
-    @Bind(R.id.tabFragmentHost)
+    @BindView(R.id.tabFragmentHost)
     TabFragmentHost mTabFragmentHost;
     private Tabs.Tab[] mMainTabs;
 

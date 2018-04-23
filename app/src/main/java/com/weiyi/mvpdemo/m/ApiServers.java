@@ -9,7 +9,10 @@ import com.weiyi.mvpdemo.m.bean.MHomeGoodsInfo;
 import com.weiyi.mvpdemo.m.bean.MHomeNewsInfo;
 import com.weiyi.mvpdemo.m.bean.MHomeSeckillGoodsInfo;
 import com.weiyi.mvpdemo.m.bean.MHomeSeckillTimeInfo;
+import com.weiyi.mvpdemo.m.bean.TestBean;
 import com.weiyi.mvpdemo.p.base.ShopCartRes;
+
+import java.util.function.DoubleUnaryOperator;
 
 import okhttp3.ResponseBody;
 import retrofit2.http.Field;
@@ -25,7 +28,8 @@ import static android.os.Build.VERSION_CODES.M;
 */
 
 public interface ApiServers {
-    public static String BaseUrl = "http://apilela.lelamall.net/";
+    public static String BaseUrl = "http://47.75.145.117/";
+//    public static String BaseUrl = "http://apilela.lelamall.net/";
 
     @FormUrlEncoded
     @POST("appi/version_update.php")
@@ -54,4 +58,13 @@ public interface ApiServers {
     @FormUrlEncoded
     @POST("appi/lcart.php")
     Observable<ShopCartRes> getCarDatas(@Field("user_id") String user_id);
+
+    @FormUrlEncoded
+    @POST("index.php/Home/Index/get_config")
+    Observable<TestBean> textAPI(@Field("") int temp);
+    @FormUrlEncoded
+    @POST("index.php/Home/User/get_user")
+    Observable<String> textA(@Field("mobile") String mobile);
+
+
 }

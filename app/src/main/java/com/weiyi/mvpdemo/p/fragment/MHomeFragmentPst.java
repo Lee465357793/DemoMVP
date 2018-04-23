@@ -7,6 +7,7 @@ import com.weiyi.mvpdemo.m.bean.MHomeGoodsInfo;
 import com.weiyi.mvpdemo.m.bean.MHomeNewsInfo;
 import com.weiyi.mvpdemo.m.bean.MHomeSeckillGoodsInfo;
 import com.weiyi.mvpdemo.m.bean.MHomeSeckillTimeInfo;
+import com.weiyi.mvpdemo.m.bean.TestBean;
 import com.weiyi.mvpdemo.p.base.BasePresenter;
 import com.weiyi.mvpdemo.utils.rxjava.RxSchedulersHelper;
 import com.weiyi.mvpdemo.utils.rxjava.RxSubscriber;
@@ -87,6 +88,38 @@ public class MHomeFragmentPst extends BasePresenter<MHomeFragment> {
                     @Override
                     public void _onNext(MHomeSeckillTimeInfo mHomeSeckillTimeInfo) {
                         mView.responseSuccessForSeckillTimes(mHomeSeckillTimeInfo);
+                    }
+
+                    @Override
+                    public void _onError(String msg) {
+
+                    }
+                });
+    }
+
+    public void test() {
+        mApiServers.textAPI(0)
+                .compose(RxSchedulersHelper.<TestBean>io_main())
+                .subscribe(new RxSubscriber<TestBean>() {
+                    @Override
+                    public void _onNext(TestBean s) {
+
+                    }
+
+                    @Override
+                    public void _onError(String msg) {
+
+                    }
+                });
+    }
+
+    public void testA() {
+        mApiServers.textA("17703951085")
+                .compose(RxSchedulersHelper.<String>io_main())
+                .subscribe(new RxSubscriber<String>() {
+                    @Override
+                    public void _onNext(String s) {
+
                     }
 
                     @Override

@@ -11,7 +11,6 @@ import com.weiyi.mvpdemo.R;
 import com.weiyi.mvpdemo.p.base.BasePresenter;
 import com.weiyi.mvpdemo.utils.ThemeUtils;
 
-import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**

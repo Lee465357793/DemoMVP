@@ -40,7 +40,7 @@ import com.youth.banner.BannerConfig;
 
 import java.util.Date;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.iwgang.countdownview.CountdownView;
@@ -50,13 +50,13 @@ import cn.iwgang.countdownview.CountdownView;
  */
 
 public class MHomeFragment extends BaseFragment<MainActivity, MHomeFragmentPst> implements OnRefreshListener, OnLoadmoreListener {
-    @Bind(R.id.recy_view)
+    @BindView(R.id.recy_view)
     RecyclerView mRecyView;
-    @Bind(R.id.smart_refresh)
+    @BindView(R.id.smart_refresh)
     SmartRefreshLayout mSmartRefresh;
-    @Bind(R.id.tv_city)
+    @BindView(R.id.tv_city)
     TextView mTvCity;
-    @Bind(R.id.title_layout)
+    @BindView(R.id.title_layout)
     LinearLayout mTitleLayout;
     private RecycleHeaderAdapter mAdapter;
     private GalleryAdapter mGalleryAdapter;
@@ -126,13 +126,10 @@ public class MHomeFragment extends BaseFragment<MainActivity, MHomeFragmentPst> 
         mPresenter.requestForNewsList();
         mPresenter.requestForSeckillGoodsList();
         mPresenter.requestForSeckillTimes();
+        mPresenter.test();
+        mPresenter.testA();
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
-    }
 
     @Override
     public void onRefresh(RefreshLayout refreshlayout) {
@@ -296,53 +293,53 @@ public class MHomeFragment extends BaseFragment<MainActivity, MHomeFragmentPst> 
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> headerView 的 ViewHolder
 
     public class HeaderViewHolder {
-        @Bind(R.id.mhome_banner)
+        @BindView(R.id.mhome_banner)
         Banner mMhomeBanner;
-        @Bind(R.id.iv_menu_00)
+        @BindView(R.id.iv_menu_00)
         Button mIvMenu00;
-        @Bind(R.id.iv_menu_01)
+        @BindView(R.id.iv_menu_01)
         Button mIvMenu01;
-        @Bind(R.id.iv_menu_02)
+        @BindView(R.id.iv_menu_02)
         Button mIvMenu02;
-        @Bind(R.id.iv_menu_03)
+        @BindView(R.id.iv_menu_03)
         Button mIvMenu03;
-        @Bind(R.id.iv_menu_04)
+        @BindView(R.id.iv_menu_04)
         Button mIvMenu04;
-        @Bind(R.id.iv_menu_05)
+        @BindView(R.id.iv_menu_05)
         Button mIvMenu05;
-        @Bind(R.id.iv_menu_06)
+        @BindView(R.id.iv_menu_06)
         Button mIvMenu06;
-        @Bind(R.id.iv_menu_07)
+        @BindView(R.id.iv_menu_07)
         Button mIvMenu07;
-        @Bind(R.id.iv_menu_08)
+        @BindView(R.id.iv_menu_08)
         Button mIvMenu08;
-        @Bind(R.id.iv_menu_09)
+        @BindView(R.id.iv_menu_09)
         Button mIvMenu09;
-        @Bind(R.id.imageView5)
+        @BindView(R.id.imageView5)
         ImageView mImageView5;
-        @Bind(R.id.new_account_left_btn)
+        @BindView(R.id.new_account_left_btn)
         ImageView mNewAccountLeftBtn;
-        @Bind(R.id.new_account_right_top_btn)
+        @BindView(R.id.new_account_right_top_btn)
         ImageView mNewAccountRightTopBtn;
-        @Bind(R.id.new_account_right_bottom_btn)
+        @BindView(R.id.new_account_right_bottom_btn)
         ImageView mNewAccountRightBottomBtn;
-        @Bind(R.id.iview)
+        @BindView(R.id.iview)
         ImageView mIview;
-        @Bind(R.id.iv_banner)
+        @BindView(R.id.iv_banner)
         ImageView mIvBanner;
-        @Bind(R.id.tv_seckill_hint)
+        @BindView(R.id.tv_seckill_hint)
         TextView mTvSeckillHint;
-        @Bind(R.id.timer_down_view)
+        @BindView(R.id.timer_down_view)
         CountdownView mTimerDownView;
-        @Bind(R.id.tv_more)
+        @BindView(R.id.tv_more)
         TextView mTvMore;
-        @Bind(R.id.recy_gallery)
+        @BindView(R.id.recy_gallery)
         RecyclerView mRecyGallery;
-        @Bind(R.id.gallery_layout)
+        @BindView(R.id.gallery_layout)
         LinearLayout mGalleryLayout;
-        @Bind(R.id.linear_root)
+        @BindView(R.id.linear_root)
         LinearLayout mLinearRoot;
-        @Bind(R.id.activity_main)
+        @BindView(R.id.activity_main)
         RelativeLayout mActivityMain;
 
         public HeaderViewHolder(View headerView) {

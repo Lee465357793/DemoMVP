@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 
@@ -41,19 +41,19 @@ import butterknife.OnClick;
  */
 public class CarFragment extends BaseFragment<MainActivity, CarFragmentPst> implements OnRefreshListener {
 
-    @Bind(R.id.recy_cart_list)
+    @BindView(R.id.recy_cart_list)
     RecyclerView mRecyclerView;
-    @Bind(R.id.cb_check_all)
+    @BindView(R.id.cb_check_all)
     CheckBox mCbCheckAll;
-    @Bind(R.id.tv_total_price)
+    @BindView(R.id.tv_total_price)
     TextView mTvTotalPrice;
-    @Bind(R.id.tv_delete)
+    @BindView(R.id.tv_delete)
     TextView mTvDelete;
-    @Bind(R.id.tv_bug_pay)
+    @BindView(R.id.tv_bug_pay)
     TextView mTvBugPay;
-    @Bind(R.id.ll_bottom_layout)
+    @BindView(R.id.ll_bottom_layout)
     LinearLayout mLlBottomLayout;
-    @Bind(R.id.smart_cart_refresh)
+    @BindView(R.id.smart_cart_refresh)
     SmartRefreshLayout mSmartCartRefresh;
     //分别定义三种显示格式的值
     public static int GridFlag = 1;

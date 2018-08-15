@@ -12,7 +12,8 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:fitsSystemWindows="true"
-        app:title=""
+        app:title="@string/app_name"
+        app:subtitle="@string/app_name"
         app:navigationIcon="@mipmap/icon_big_star_on"/>
 
     <Button
@@ -36,10 +37,22 @@
         android:text="Coordinator"
         android:textAllCaps="false"/>
     <Button
+        android:id="@+id/btn_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Menu"
+        android:textAllCaps="false"/>
+    <Button
         android:id="@+id/btn_show_bottom_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ShowBottomDialog"
+        android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/btn_show_bottom_dialog_err"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ShowBottomDialogErr"
         android:textAllCaps="false"/>
 
     <FrameLayout

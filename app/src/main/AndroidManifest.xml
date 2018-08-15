@@ -12,7 +12,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppBaseTheme">
-        <activity android:name=".v.activity.MainActivity">
+        <activity
+            android:name=".v.activity.MainActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -24,6 +26,23 @@
         <activity android:name=".v.activity.CoordinatorActivity">
         </activity>
         <activity android:name=".v.activity.ToolbarForActionBarActivity">
+        </activity>
+        <activity android:name=".v.activity.AnimActivity">
+        </activity>
+
+        <service
+            android:name=".common.service.AidlService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+
+        <activity android:name=".v.activity.ConstraintActivity">
+        </activity>
+        <activity android:name=".v.activity.ImgViewPagerActivity">
+        </activity>
+        <activity android:name=".v.activity.TransitionDemoActivity">
+        </activity>
+        <activity android:name=".v.activity.MenuActivity">
         </activity>
     </application>
 

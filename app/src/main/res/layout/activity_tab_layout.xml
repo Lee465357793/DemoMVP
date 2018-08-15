@@ -15,37 +15,56 @@
         android:layout_height="wrap_content">
 
         <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/space_160"
+            style="@style/AppTheme"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-            app:expandedTitleMarginEnd="64dp"
-            app:expandedTitleMarginStart="48dp">
-
+            app:collapsedTitleTextAppearance="?android:attr/textAppearanceSmall"
+            app:expandedTitleMargin="@dimen/txt_20">
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:background="@mipmap/ic_launcher"
+                android:layout_height="160dp"
+                android:background="@color/blue"
                 app:layout_collapseMode="parallax"/>
-
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin">
+                app:layout_collapseMode="pin"
+                app:title="@string/app_name"
+                app:subtitle="@string/app_name"
+                app:contentInsetStartWithNavigation="0dp">
 
             </android.support.v7.widget.Toolbar>
+
         </android.support.design.widget.CollapsingToolbarLayout>
+
 
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v4.widget.NestedScrollView
+    <!--<android.support.v4.widget.NestedScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="900dp"-->
+            <!--android:text="打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可"-->
+            <!--android:gravity="center"/>-->
+    <!--</android.support.v4.widget.NestedScrollView>-->
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="900dp"
-            android:text="打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可打开u深度u盘启动盘制作工具，将准备好的u盘插入电脑usb接口，等待软件自动识别所插入的u盘。随后无需修改界面中任何选项，与下图所示参数选项一致之后点击“开始制作”即可"
-            android:gravity="center"/>
-    </android.support.v4.widget.NestedScrollView>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:background="@color/colorPrimary"
+        app:layout_behavior="com.weiyi.mvpdemo.common.behavior.BottombarCoordinatorBehavior"/>
 </android.support.design.widget.CoordinatorLayout>

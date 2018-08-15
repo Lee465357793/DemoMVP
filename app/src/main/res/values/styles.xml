@@ -1,7 +1,33 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
+    </style>
+    <style name="TextAppearance" parent="android:TextAppearance">
+    </style>
+    <style name="TextAppearance.All">
+        <item name="android:textColor">#00ff00</item>
+        <item name="android:textSize">60sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColorHint">#ffff0000</item>
+        <item name="android:textColorLink">#ff0000ff</item>
+        <item name="android:textColorHighlight">#ff00ff00</item>
+    </style>
+
+    <style name="TextAppearance.Colors">
+        <item name="android:textColor">#FF000000</item>
+        <item name="android:textColorHint">#ff0000ff</item>
+        <item name="android:textColorLink">#ff00ff00</item>
+        <item name="android:textColorHighlight">#ffff0000</item>
+    </style>
+
+    <style name="TextAppearance.NotColors">
+        <item name="android:textSize">17px</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <style name="TextAppearance.Style">
+        <item name="android:textStyle">normal</item>
     </style>
 
     <!--设置本应用的style-->
@@ -9,6 +35,7 @@
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="android:fitsSystemWindows">true</item>
+        <item name="android:windowContentTransitions" tools:ignore="NewApi">false</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:textColorPrimary">@color/text_color_primary</item>
@@ -107,6 +134,13 @@
         <item name="colorPrimary">@color/green</item>
         <item name="colorPrimaryDark">@color/dark_green</item>
         <item name="colorAccent">@color/accent_green</item>
+    </style>
+
+    <style name="AppCardView" parent="CardView.Light">
+        <item name="android:stateListAnimator" tools:targetApi="lollipop">@drawable/lift_on_touch</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="cardPreventCornerOverlap">false</item>
+        <item name="cardUseCompatPadding">true</item>
     </style>
 
 </resources>

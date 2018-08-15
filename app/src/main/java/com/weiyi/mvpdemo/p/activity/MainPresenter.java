@@ -19,14 +19,11 @@ public class MainPresenter extends BasePresenter<MainActivity> {
                 .compose(RxSchedulersHelper.<AppVersionInfo>io_main())
                 .subscribe(new RxSubscriber<AppVersionInfo>() {
                     @Override
-                    public void _onNext(AppVersionInfo s) {
-                        Log.e("测试", s.toString());
+                    public void onNext(AppVersionInfo appVersionInfo) {
+                            mView.onSuccess();
+                            Log.e("测试", appVersionInfo.toString());
                     }
 
-                    @Override
-                    public void _onError(String msg) {
-                        Log.e("测试", msg);
-                    }
                 });
     }
 

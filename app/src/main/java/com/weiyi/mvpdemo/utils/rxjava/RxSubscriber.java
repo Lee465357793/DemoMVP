@@ -2,6 +2,8 @@ package com.weiyi.mvpdemo.utils.rxjava;
 
 import android.util.Log;
 
+import com.weiyi.mvpdemo.p.base.BasePresenter;
+
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 
@@ -13,9 +15,38 @@ import rx.Subscriber;
  */
 public abstract class RxSubscriber<T> extends Subscriber<T> {
 
+    private BasePresenter mBasePresenter = null;
+
+
+    public RxSubscriber(BasePresenter basePresenter) {
+        this.mBasePresenter = basePresenter;
+    }
+
+    public RxSubscriber() {
+
+    }
+
+
+//    @Override
+//    public void onCompleted() {
+//        Log.e("测试", "onCompleted()");
+//    }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        if (mBasePresenter != null){
+            mBasePresenter.start();
+        }
+    }
+
+
     @Override
     public void onCompleted() {
-        Log.e("测试", "onCompleted()");
+        if (mBasePresenter != null){
+            mBasePresenter.handleSuccess();
+        }
     }
 
     @Override
@@ -26,24 +57,14 @@ public abstract class RxSubscriber<T> extends Subscriber<T> {
         if (e instanceof UnknownHostException) {
             msg = "没有网络...";
         } else if (e instanceof SocketTimeoutException) {
-            //
            msg = "请求超时...";
         }else if (e instanceof IllegalStateException) {
-            //
            msg = "数据解析异常...";
         }else{
             msg = "请求失败，请稍后重试...";
         }
-        _onError(msg);
+        if (mBasePresenter != null){
+            mBasePresenter.handleError(e);
+        }
     }
-
-    @Override
-    public void onNext(T t) {
-        Log.e("测试", "onNext()");
-        _onNext(t);
-    }
-
-    public abstract void _onNext(T t);
-
-    public abstract void _onError(String msg);
 }

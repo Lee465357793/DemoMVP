@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android">
+    <slide >
+        <targets >
+            <target android:targetId="@id/item_card_view"/>
+        </targets>
+    </slide>
+
+
+</transitionSet>

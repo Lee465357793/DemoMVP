@@ -62,6 +62,7 @@ public interface ApiServers {
     @FormUrlEncoded
     @POST("index.php/Home/Index/get_config")
     Observable<TestBean> textAPI(@Field("") int temp);
+
     @FormUrlEncoded
     @POST("index.php/Home/User/get_user")
     Observable<String> textA(@Field("mobile") String mobile);

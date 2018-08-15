@@ -20,14 +20,10 @@ public class CarFragmentPst extends BasePresenter<CarFragment> {
                 .compose(RxSchedulersHelper.<ShopCartRes>io_main())
                 .subscribe(new RxSubscriber<ShopCartRes>() {
                     @Override
-                    public void _onNext(ShopCartRes shopCartRes) {
+                    public void onNext(ShopCartRes shopCartRes) {
                         mView.responseSuccessForCarDatas(shopCartRes);
                     }
 
-                    @Override
-                    public void _onError(String msg) {
-
-                    }
                 });
     }
 
@@ -36,7 +32,7 @@ public class CarFragmentPst extends BasePresenter<CarFragment> {
                 .compose(RxSchedulersHelper.<MHomeGoodsInfo>io_main())
                 .subscribe(new RxSubscriber<MHomeGoodsInfo>() {
                     @Override
-                    public void _onNext(MHomeGoodsInfo mHomeGoodsInfo) {
+                    public void onNext(MHomeGoodsInfo mHomeGoodsInfo) {
                         LinkedList<CartDataBean> mGoodsDatas = new LinkedList<CartDataBean>();
                         for (GoodsDataBean obj : mHomeGoodsInfo.data) {
                             CartDataBean goodsInfo = new CartDataBean();
@@ -52,11 +48,6 @@ public class CarFragmentPst extends BasePresenter<CarFragment> {
                             mGoodsDatas.add(goodsInfo);
                         }
                         mView.responseSuccessForGoodsList(mGoodsDatas);
-                    }
-
-                    @Override
-                    public void _onError(String msg) {
-
                     }
                 });
     }

@@ -16,10 +16,12 @@ import com.weiyi.mvpdemo.R;
 import com.weiyi.mvpdemo.p.base.BasePresenter;
 import com.weiyi.mvpdemo.v.activity.CoordinatorActivity;
 import com.weiyi.mvpdemo.v.activity.MainActivity;
+import com.weiyi.mvpdemo.v.activity.MenuActivity;
 import com.weiyi.mvpdemo.v.activity.TabLayoutActivity;
 import com.weiyi.mvpdemo.v.activity.ToolbarForActionBarActivity;
 import com.weiyi.mvpdemo.v.base.BaseFragment;
 
+import java.util.Observable;
 import java.util.Random;
 
 import butterknife.BindView;
@@ -84,7 +86,7 @@ public class TestFragment extends BaseFragment<MainActivity, BasePresenter> {
     }
 
 
-    @OnClick({R.id.text_view, R.id.anim_view, R.id.btn_tablayout, R.id.btn_toolBar, R.id.btn_coordinator, R.id.btn_show_bottom_dialog})
+    @OnClick({R.id.btn_menu, R.id.btn_show_bottom_dialog_err, R.id.text_view, R.id.anim_view, R.id.btn_tablayout, R.id.btn_toolBar, R.id.btn_coordinator, R.id.btn_show_bottom_dialog})
     public void onViewClicked(View view) {
         switch (view.getId()){
             case R.id.text_view:
@@ -105,6 +107,9 @@ public class TestFragment extends BaseFragment<MainActivity, BasePresenter> {
             case R.id.anim_view:
                 starNor();
                 break;
+            case R.id.btn_menu:
+                startActivity(new Intent(mActivity, MenuActivity.class));
+                break;
             case R.id.btn_tablayout:
                 startActivity(new Intent(mActivity, TabLayoutActivity.class));
                 break;
@@ -116,6 +121,9 @@ public class TestFragment extends BaseFragment<MainActivity, BasePresenter> {
                 break;
             case R.id.btn_show_bottom_dialog:
                 mActivity.showBottomSheetDialog();
+                break;
+            case R.id.btn_show_bottom_dialog_err:
+                mActivity.showBottomSheetDialogErr();
                 break;
         }
 

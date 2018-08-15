@@ -60,5 +60,6 @@
     <color name="white">#FFF</color>
     <color name="line">#DCDCDC</color>
     <color name="black_4e">#4E4E4E</color>
+    <color name="blackTransparent">#cc000000</color>
 
 </resources>

@@ -26,6 +26,7 @@ public class HttpUtils {
                 .baseUrl(ApiServers.BaseUrl) //设置 域名
                 .addConverterFactory(RxConverterFactoryUtil.create()) //设置GSON 解析
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())  //设置支持RxJAVA
+                .client(getOkHttpClient())
                 .build();
     }
 
@@ -36,13 +37,12 @@ public class HttpUtils {
                 Log.d("zgx", "OkHttp====message " + message);
             }
         });
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-
         return new OkHttpClient.Builder()
-                .addInterceptor(interceptor)
-                .readTimeout(5000, TimeUnit.MICROSECONDS)
-                .writeTimeout(5000, TimeUnit.MICROSECONDS)
+                .addNetworkInterceptor(interceptor.setLevel(HttpLoggingInterceptor.Level.HEADERS))
+                .addInterceptor(interceptor.setLevel(HttpLoggingInterceptor.Level.BODY))
                 .addInterceptor(new HttpBaseParamsLoggingInterceptor())
+                .retryOnConnectionFailure(true)//连接失败后是否重新连接
+                .connectTimeout(5000, TimeUnit.MILLISECONDS) //超时时间
                 .build();
     }
 }

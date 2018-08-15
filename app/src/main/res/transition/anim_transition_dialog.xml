@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+    android:transitionOrdering="sequential">
+    <slide >
+        <targets >
+            <target android:targetId="@id/btn_1"/>
+        </targets>
+    </slide>
+    <slide >
+        <targets >
+            <target android:targetId="@id/btn_2"/>
+        </targets>
+    </slide>
+    <slide >
+        <targets >
+            <target android:targetId="@id/btn_3"/>
+        </targets>
+    </slide>
+    <slide >
+        <targets >
+            <target android:targetId="@id/btn_4"/>
+        </targets>
+    </slide>
+    <slide >
+        <targets >
+            <target android:targetId="@id/btn_5"/>
+        </targets>
+    </slide>
+    <slide >
+        <targets >
+            <target android:targetId="@id/btn_6"/>
+        </targets>
+    </slide>
+
+
+</transitionSet>

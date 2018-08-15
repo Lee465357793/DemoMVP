@@ -3,4 +3,21 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <item name="android:navigationBarColor">@color/colorPrimary</item>
     </style>
+
+    <style name="MaterialDesignTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- 允许使用transitions -->
+        <item name="android:windowContentTransitions">true</item>
+        <!-- 指定进入、退出、返回、重新进入时的transitions -->
+        <item name="android:windowEnterTransition">@transition/slide</item>
+        <item name="android:windowExitTransition">@transition/slide</item>
+        <item name="android:windowReturnTransition">@transition/slide</item>
+        <item name="android:windowReenterTransition">@transition/slide</item>
+
+        <!-- 指定进入、退出、返回、重新进入时的共享transitions -->
+        <!--<item name="android:windowSharedElementEnterTransition">@transition/change_image_transform-->
+        <!--</item>-->
+        <!--<item name="android:windowSharedElementExitTransition">@transition/change_image_transform-->
+        <!--</item>-->
+
+    </style>
 </resources>

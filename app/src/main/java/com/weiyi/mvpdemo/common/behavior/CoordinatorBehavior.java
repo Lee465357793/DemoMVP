@@ -28,8 +28,8 @@ public class CoordinatorBehavior extends CoordinatorLayout.Behavior<Button> {
     /**
      * 判断  child布局  是否是要求的  dipendency布局
      * @param parent
-     * @param child
-     * @param dependency
+     * @param child 绑定Behavior 的View
+     * @param dependency 被依赖的View
      * @return
      */
     @Override
@@ -38,10 +38,10 @@ public class CoordinatorBehavior extends CoordinatorLayout.Behavior<Button> {
     }
 
     /**
-     * 当 dependency_view 发生改变时（位置、高度）
+     * 当 被依赖的 view 发生改变时（位置、高度）
      * @param parent
-     * @param child
-     * @param dependency
+     * @param child 绑定Behavior 的View
+     * @param dependency 被依赖的 view
      * @return
      */
     @Override

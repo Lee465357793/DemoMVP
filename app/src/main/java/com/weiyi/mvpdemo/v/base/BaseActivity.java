@@ -1,13 +1,23 @@
 package com.weiyi.mvpdemo.v.base;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.transition.ChangeBounds;
+import android.transition.ChangeClipBounds;
+import android.transition.ChangeImageTransform;
+import android.transition.ChangeTransform;
+import android.transition.Explode;
+import android.transition.Fade;
+import android.transition.Slide;
+import android.transition.Transition;
+import android.view.Gravity;
+import android.view.KeyEvent;
+import android.view.Window;
 
 import com.weiyi.mvpdemo.R;
+import com.weiyi.mvpdemo.common.widget.ProgressDialogs;
 import com.weiyi.mvpdemo.p.base.BasePresenter;
 import com.weiyi.mvpdemo.utils.ThemeUtils;
 
@@ -21,12 +31,25 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     public T mPresenter;
     public static int themeIndex = 1;
     public BaseActivity mActivity;
+    private ProgressDialogs mProgressDialogs;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initTheme();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setEnterTransition(new Slide(Gravity.LEFT).setDuration(400));
+            //            getWindow().setReturnTransition(new Slide(Gravity.LEFT).setDuration(400)); //返回
+            //            getWindow().setReenterTransition(new Slide(Gravity.LEFT).setDuration(400));
+            //            getWindow().setExitTransition(new Slide(Gravity.LEFT).setDuration(400));
+
+            //            getWindow().setSharedElementEnterTransition(new ChangeBounds());
+            //            getWindow().setSharedElementExitTransition(new ChangeTransform());
+            //            getWindow().setSharedElementReenterTransition(new ChangeTransform());
+            //            getWindow().setSharedElementReturnTransition(new ChangeTransform());
+        }
         setContentView(getLayoutResId());
+        mProgressDialogs = new ProgressDialogs(this);
         mActivity = this;
         mPresenter = getPresenter();
         mPresenter.attachView(this, this);
@@ -72,5 +95,31 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     protected void onDestroy() {
         super.onDestroy();
         mPresenter.detachView();
+    }
+
+
+    public void showLoading(String msg) {
+        if (mProgressDialogs != null){
+            mProgressDialogs.showDialog();
+        }
+    }
+
+    public void hideLoading() {
+        if (mProgressDialogs != null){
+            mProgressDialogs.closeDialog();
+        }
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP){
+            overridePendingTransition(R.anim.anim_exit_act_in, R.anim.anim_exit_act_out);
+        }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        return super.onKeyDown(keyCode, event);
     }
 }

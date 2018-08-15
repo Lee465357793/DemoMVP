@@ -13,6 +13,8 @@ import com.weiyi.mvpdemo.utils.rxjava.RxSchedulersHelper;
 import com.weiyi.mvpdemo.utils.rxjava.RxSubscriber;
 import com.weiyi.mvpdemo.v.fragment.MHomeFragment;
 
+import rx.Subscription;
+
 /**
  * Created by Lee on 2018/2/28 0028.
  */
@@ -20,15 +22,10 @@ public class MHomeFragmentPst extends BasePresenter<MHomeFragment> {
     public void requestForBanners() {
         mApiServers.getHomeTopBanners(0)
                 .compose(RxSchedulersHelper.<MHomeBannersInfo>io_main())
-                .subscribe(new RxSubscriber<MHomeBannersInfo>() {
+                .subscribe(new RxSubscriber<MHomeBannersInfo>(this) {
                     @Override
-                    public void _onNext(MHomeBannersInfo mHomeBannersInfo) {
+                    public void onNext(MHomeBannersInfo mHomeBannersInfo) {
                         mView.responseSuccessForTopBanners(mHomeBannersInfo);
-                    }
-
-                    @Override
-                    public void _onError(String msg) {
-                        Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -38,14 +35,10 @@ public class MHomeFragmentPst extends BasePresenter<MHomeFragment> {
                 .compose(RxSchedulersHelper.<MHomeGoodsInfo>io_main())
                 .subscribe(new RxSubscriber<MHomeGoodsInfo>() {
                     @Override
-                    public void _onNext(MHomeGoodsInfo mHomeGoodsInfo) {
+                    public void onNext(MHomeGoodsInfo mHomeGoodsInfo) {
                         mView.responseSuccessForGoodsList(mHomeGoodsInfo);
                     }
 
-                    @Override
-                    public void _onError(String msg) {
-
-                    }
                 });
     }
 
@@ -54,28 +47,20 @@ public class MHomeFragmentPst extends BasePresenter<MHomeFragment> {
                 .compose(RxSchedulersHelper.<MHomeNewsInfo>io_main())
                 .subscribe(new RxSubscriber<MHomeNewsInfo>() {
                     @Override
-                    public void _onNext(MHomeNewsInfo mHomeNewsInfo) {
+                    public void onNext(MHomeNewsInfo mHomeNewsInfo) {
                         mView.responseSuccessForNewsList(mHomeNewsInfo);
                     }
 
-                    @Override
-                    public void _onError(String msg) {
-
-                    }
                 });
     }
 
     public void requestForSeckillGoodsList() {
-        mApiServers.getSeckillGoodsList(0)
+        Subscription subscribe = mApiServers.getSeckillGoodsList(0)
                 .compose(RxSchedulersHelper.<MHomeSeckillGoodsInfo>io_main())
                 .subscribe(new RxSubscriber<MHomeSeckillGoodsInfo>() {
                     @Override
-                    public void _onNext(MHomeSeckillGoodsInfo mHomeSeckillGoodsInfo) {
+                    public void onNext(MHomeSeckillGoodsInfo mHomeSeckillGoodsInfo) {
                         mView.responseSuccessForSeckillGoodsList(mHomeSeckillGoodsInfo);
-                    }
-
-                    @Override
-                    public void _onError(String msg) {
 
                     }
                 });
@@ -86,14 +71,11 @@ public class MHomeFragmentPst extends BasePresenter<MHomeFragment> {
                 .compose(RxSchedulersHelper.<MHomeSeckillTimeInfo>io_main())
                 .subscribe(new RxSubscriber<MHomeSeckillTimeInfo>() {
                     @Override
-                    public void _onNext(MHomeSeckillTimeInfo mHomeSeckillTimeInfo) {
+                    public void onNext(MHomeSeckillTimeInfo mHomeSeckillTimeInfo) {
                         mView.responseSuccessForSeckillTimes(mHomeSeckillTimeInfo);
-                    }
-
-                    @Override
-                    public void _onError(String msg) {
 
                     }
+
                 });
     }
 
@@ -102,14 +84,10 @@ public class MHomeFragmentPst extends BasePresenter<MHomeFragment> {
                 .compose(RxSchedulersHelper.<TestBean>io_main())
                 .subscribe(new RxSubscriber<TestBean>() {
                     @Override
-                    public void _onNext(TestBean s) {
+                    public void onNext(TestBean testBean) {
 
                     }
 
-                    @Override
-                    public void _onError(String msg) {
-
-                    }
                 });
     }
 
@@ -118,14 +96,12 @@ public class MHomeFragmentPst extends BasePresenter<MHomeFragment> {
                 .compose(RxSchedulersHelper.<String>io_main())
                 .subscribe(new RxSubscriber<String>() {
                     @Override
-                    public void _onNext(String s) {
-
-                    }
-
-                    @Override
-                    public void _onError(String msg) {
+                    public void onNext(String s) {
 
                     }
                 });
+
     }
+
+
 }

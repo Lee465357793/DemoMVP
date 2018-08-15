@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.CardView
+        android:id="@+id/item_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="@dimen/space_5"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="@dimen/space_5"
+        app:cardPreventCornerOverlap="false">
+        <ImageView
+            android:id="@+id/item_card_top_pic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:transitionName="view_pager_img"/>
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>
